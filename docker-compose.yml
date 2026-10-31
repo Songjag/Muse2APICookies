@@ -1,0 +1,18 @@
+services:
+  muse2api:
+    build: .
+    image: muse2apicookies:latest
+    stdin_open: true
+    tty: true
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      MUSE2API_HOST: 0.0.0.0
+      MUSE2API_CHROMIUM_PATH: /usr/bin/chromium
+      MUSE2API_DATA_DIR: /app/data
+    ports:
+      - "18610:18610"
+    volumes:
+      - ./data:/app/data
+    shm_size: "1gb"

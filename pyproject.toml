@@ -1,0 +1,22 @@
+[project]
+name = "muse2apicookies"
+version = "0.1.0"
+description = "Interactive cookie-session launcher for muse2api"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["muse2api"]
+
+[project.optional-dependencies]
+dev = ["muse2api[dev]"]
+matting = ["muse2api[matting]"]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+muse2api = { path = "muse2api", editable = true }
+
+[tool.pytest.ini_options]
+testpaths = ["muse2api/tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
