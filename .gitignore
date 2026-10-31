@@ -12,3 +12,10 @@ wheels/
 # Local sessions and secrets
 data/
 .env
+
+# Local tooling and caches
+.pytest_cache/
+.ruff_cache/
+.agents/
+.codex/
+.aws/
